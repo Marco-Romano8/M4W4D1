@@ -1,6 +1,9 @@
 //Endpoint: https://striveschool-api.herokuapp.com/api/product/
 const url = "https://striveschool-api.herokuapp.com/api/product/"
 
+// PROVA PER FAR ANDARE IN ERRORE L'ENDPOINT E VEDERE LO SPINNER
+// const url = "https://striveschool-api.herokuapp.com/api/product/aaa"
+
 // Elementi del DOM:
 const productsBox = document.getElementById("products");
 const searchInput = document.getElementById("search-input");
@@ -11,11 +14,13 @@ const searchButton = document.getElementById("search-button");
 // const formPrice = document.getElementById("price");
 // const formImg = document.getElementById("img");
 const formElement = document.getElementById('productForm');
+const spinner = document.getElementById("loading");
 
 
 let products = [];
 
 async function getProducts() {
+    spinner.classList.remove("d-none");
     try {  
         const res = await fetch(url, {
             headers: {
@@ -26,6 +31,7 @@ async function getProducts() {
         const json = await res.json();
         console.log(json);
         renderProducts(json);
+        spinner.classList.add("d-none");
 
         products = json;
     } catch (error) {
