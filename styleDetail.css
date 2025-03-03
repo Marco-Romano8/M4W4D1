@@ -1,0 +1,58 @@
+body {
+    background-color: #dfe0e0 !important;
+    color: #1C1C1C;
+    width: 100%;
+    overflow-x: hidden;
+    background-image: url(https://img.freepik.com/vettori-gratuito/sfondo-nero-in-stile-3d-con-strato-di-carta_206725-669.jpg?semt=ais_hybrid);
+    /* background-size: 100%; */
+    animation-name: muoviSfodno;
+    animation-duration: 25s;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+@keyframes muoviSfodno {
+    from {background-position: 0% 0%;}
+    50% {background-position: 0% 50%;}
+    to {background-position: 0% 100%;}
+
+}
+
+.nav-link {
+    color: black !important;
+} 
+
+.nav-item {
+    background-color: white;
+    border-radius: 10px;   
+    padding: 0 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.nav-item:hover {
+    box-shadow: 0 0 20px 5px rgba(255, 255, 255, 1);
+    transform: scale(1.1);
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.card {
+    border-radius: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    max-width: 400px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.card:hover {
+    transition: 0.5s;
+    transform: scale(1.05);
+
+}
+
+@media (max-width: 768px) {
+    .nav-item {
+        margin-top: 20px;
+    }
+}
